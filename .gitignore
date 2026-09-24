@@ -1,0 +1,20 @@
+# Maven build output - never commit compiled code
+target/
+
+# IntelliJ IDEA project files - your editor config, not the project
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment/secrets (if you ever add a .env file later)
+.env
+*.env
+
+# Log files
+*.log
+logs/

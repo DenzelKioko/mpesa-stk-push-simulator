@@ -1,0 +1,114 @@
+{
+  "info": {
+    "_postman_id": "d9965a07-9b51-4c4f-af89-24c3e09e35b1",
+    "name": "M-PESA STK Push",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58444581",
+    "_collection_link": "https://go.postman.co/collection/58444581-d9965a07-9b51-4c4f-af89-24c3e09e35b1?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Initiate STK Push",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"businessShortCode\": \"174379\",\r\n  \"password\": \"anybase64stringhere\",\r\n  \"timestamp\": \"20240101120000\",\r\n  \"transactionType\": \"CustomerPayBillOnline\",\r\n  \"amount\": 500,\r\n  \"partyA\": \"254712345678\",\r\n  \"partyB\": \"174379\",\r\n  \"phoneNumber\": \"254712345678\",\r\n  \"callBackURL\": \"https://example.com/callback\",\r\n  \"accountReference\": \"ORDER-002\",\r\n  \"transactionDesc\": \"Payment for order 001\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/mpesa/stkpush/v1/processrequest",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "mpesa",
+            "stkpush",
+            "v1",
+            "processrequest"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Poll Status",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "List All Transactions",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Filter by Phone Number",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "password",
+        "value": "tes",
+        "type": "string"
+      },
+      {
+        "key": "username",
+        "value": "testConsumerKey",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
